@@ -2,7 +2,7 @@ import os
 import streamlit as st
 
 from langchain_community.document_loaders import PyPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.chains import RetrievalQA
@@ -67,5 +67,6 @@ if query:
         with st.expander("Sources"):
             for doc in result["source_documents"]:
                 st.write(doc.metadata["source"])
+
 
 
